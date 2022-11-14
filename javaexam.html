@@ -1,0 +1,161 @@
+<html>
+
+   <head> 
+      
+      <title>makemybooking</title>
+   </head>
+      <style>
+  
+      </style>
+     
+   <body style="color: black; background-image: url(https://i.pinimg.com/originals/85/5d/a7/855da75316bc5435ed9e09d0625f347f.jpg); font-size: medium; font-weight: bolder;">
+      
+     <h3 style="color: black; font-family:'Courier New', Courier, monospace; text-align: center">Booking Details</Details></h3>
+     <form name="myform" onsubmit="return Validpassword()" action="newHTML.html" method="post">
+
+      <div id="Section1">
+       
+      <!--Section 1 Radio button code starts--> 
+      
+   <h3 style="color: black; font-family:'Courier New', Courier, monospace; text-align: center">Please choose your trip</h3> 
+
+  
+   <input type="radio" name="One_Way" id="One_Way" value="One_Way" onclick=" checkButton()">One Way</input>
+   <input type="radio" name="One_Way" id="Round_Trip" value="Round_Trip" onclick="checkButton()" >Round Trip<br><br>
+
+   <label for="From">From</label>
+   <input type="text" name="From" id="From" placeholder="Origin"  onclick=" checkButton()">
+   <label for="To">To</label>
+   <input type="text" name="To" id="To" placeholder="Destination" onclick=" checkButton()"> <br> <br>
+
+   <label for="Departure_date">Departure:</label> <input type="date" id="Departure_date" name="Departure_date">
+   <label for="Return_date">Return date:</label> <input type="date" id="Return_date" name="Return_date">
+   <input type="submit"> <br> <br>
+
+   <h3 style="color: black; font-family:'Courier New', Courier, monospace">Number of Passangers:</h3>  </b> 
+   <label for="Adults">Adults</label>
+   <input type="number" name="Adults" id="Adults" value="Adults"  onclick=" checkButton()">
+   <label for="Children">Children</label>
+   <input type="number" name="Children" id="Children" value="Children" onclick="checkButton()">
+
+   <h3 style="color: black; font-family:'Courier New', Courier, monospace">Passanger 1 Details:</h3>  
+   <label for="myname">Name</label>
+   <input type="text" id="newmine" onclick="checkButton()" pattern="[a-zA-Z]{5,}" title="Only Alphabets with minimum five"> 
+   <label for="Gender">Gender</label>
+   <input type="radio" id="Male" name="gender" onclick="checkButton()">
+   <label for="Male">Male</label>
+   <input type="radio" id="Female" name="gender" onclick="checkButton()">
+   <label for="Female">Female</label>
+   <label for="Age">Age</label>
+   <input type="number" name="Age" id="Age" value="Age" onclick="checkButton()">
+   
+   <h3 style="color: black; font-family:'Courier New', Courier, monospace">Passanger 2 Details:</h3>  
+   <label for="Name">Name</label>
+   <input type="text" id="Name" onclick="checkButton()"> 
+   <label for="Gender">Gender</label>
+   <input type="radio" id="Male" name="gender" onclick="checkButton()">
+   <label for="Male">Male</label>
+   <input type="radio" id="Female" name="gender" onclick="checkButton()">
+   <label for="Female">Female</label>
+   <label for="Age">Age</label>
+   <input type="number" name="Age" id="Age" value="Age" onclick="checkButton()">
+
+   <h3 style="color: black; font-family:'Courier New', Courier, monospace">Passanger 3 Details:</h3>  
+   <label for="Name">Name</label>
+   <input type="text" id="Name" onclick="checkButton()"> 
+   <label for="Gender">Gender</label>
+   <input type="radio" id="Male" name="gender" onclick="checkButton()">
+   <label for="Male">Male</label>
+   <input type="radio" id="Female" name="gender" onclick="checkButton()">
+   <label for="Female">Female</label> <br> <br>
+   <label for="Age">Age</label>
+   <input type="number" name="Age" id="Age" value="Age" onclick="checkButton()">
+
+   <label for="lang">Food type</label>
+   <select name="Food type" id="Food type">
+     <option value="Choose one">Choose One</option>
+     <option value="Hindu">Hindu Vegetarian</option>
+     <option value="Vegetarian">Vegetarian</option>
+     <option value="Jain">Jain</option>
+     <option value="Koshar">Koshar</option>
+   </select>
+   <input type="submit" value="Submit" onclick="checkButton()" />
+
+
+   <label for="Travelclass">Travel class</label>
+   <select name="Travel class" id="Travel class">
+   <option value="Choose one">Choose One</option>
+     <option value="Business">Business</option>
+     <option value="First">First</option>
+     <option value="Economy">Economy</option>
+   </select>
+   <input type="submit" placeholder="Submit" onclick="checkButton()" />
+
+
+   <h3 style="color: black; font-family:'Courier New', Courier, monospace">Payment Details:</h3>  
+   <label for="Name">Full Name:</label>
+   <input type="text" placeholder="Please enter full name" id="Name" onclick="checkButton()"> 
+   <label for="email">Email:</label>
+   <input type="text" name="Email" id="Email" placeholder="Please enter valid email" onclick="checkButton()">
+   <label for="Mobile">Mobile:</label>
+   <input type="number" placeholder="10 digits" id="Mobile" name="Mobile"onclick="checkButton()"> <br> <br>
+   <label for="address">Address:</label>
+   <textarea id="address" name="address">Address</textarea>
+   
+   <br> <br>
+
+   <label>Submit Booking Request</label>
+   <input type="Submit"> 
+
+
+<!--button code Ends--> 
+
+<!--<button type="button" onclick=" checkButton()"> Submit </button>--> 
+   
+   </div>   
+      </form>    
+<!--Section  1 Ends -->  
+          
+    <script>
+function checkButton() 
+
+                    {  
+                         if(document.getElementById('One_Way').checked) 
+                                { 
+                               document.getElementById("Departure").innerHTML = document.getElementById("Departure").value + " radio button is checked";   
+                               document.getElementById("Round_Trip").style.display = "block";
+                                } 
+                                    else { 
+                                            document.getElementById("error").innerHTML 
+                                            = "You have not selected round trip"; 
+                                            } 
+                    } 
+
+           let mymail=document.myform.myemail.value;
+           let attherate=mymail.indexOf("@");
+           let atthedot=mymail.lastIndexOf(".");
+
+           if (attherate<1 || atthedot<attherate+2 || atthedot>=mymail.length)
+                  {
+                     alert( "enter the correct email");
+                     return false;
+                  }
+
+                 let date=Date(document.myform.mydate.value)
+                 if (Departure_date<curdate){
+                           alert( "enter the correct departure date");
+                           return false;
+                        }
+
+                  let mobile1=(document.myform.mobile.value)
+                   if (mobile1.length==10) {
+                  return true
+                  }else      
+                   {
+                   alert( "enter the correct 10 digits number");
+                   return false;
+                  }
+    </script>
+   </body>
+
+</html>
